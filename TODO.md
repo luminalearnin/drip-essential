@@ -7,4 +7,4 @@
 - [x] Provide a persistent guest bag/cart with quantity controls, remove actions, summary total, and WhatsApp checkout handoff.
 - [x] Preserve direct contact channels: WhatsApp +91 91377 22174, dripessential62@gmail.com, and Instagram @dripx_watches.
 - [x] Preserve current navigation destinations through Home, Collections, Best Sellers, About Us, Shipping Info, and Returns surfaces.
-- [ ] Canonical GitHub transfer to the user-confirmed private `drip-essential` repository and publication.
+- [x] Canonical GitHub transfer to the user-confirmed private `drip-essential` repository. Publication remains a Dashboard action because GitHub is canonical.
