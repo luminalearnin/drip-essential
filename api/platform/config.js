@@ -1,1 +1,2 @@
-window.__MANUS_CONFIG__={"projectId":"RU89vx4ZavnYRsqJKndtRZ","oauthPortalUrl":"https://manus.im","apiUrl":"https://forge.manus.ai","apiBrowserKey":"kMpFcyKNCbR7W3B6RZEJNn"};
+/* Exact-production handoff: preserve absolute visual and behavioral parity with the current Drip Essential site. */
+window.location.replace('https://dripessential.in/');
