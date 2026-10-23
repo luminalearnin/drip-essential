@@ -20,24 +20,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Enable pnpm
-        run: corepack enable && corepack prepare pnpm@10.18.0 --activate
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Build static site
-        run: pnpm build:static
-        env:
-          VITE_BASE_PATH: /drip-essential/
-      - name: Preserve client-side routes on GitHub Pages
-        run: cp dist/public/index.html dist/public/404.html && touch dist/public/.nojekyll
+      - name: Assemble exact production site
+        run: |
+          rm -rf /tmp/drip-pages
+          mkdir -p /tmp/drip-pages
+          cp index.html 404.html .nojekyll favicon.png logo.png logo.webp logo-header.png /tmp/drip-pages/
+          cp -R assets imports /tmp/drip-pages/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/public
+          path: /tmp/drip-pages
 
   deploy:
     needs: build
